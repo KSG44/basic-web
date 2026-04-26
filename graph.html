@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Graph Structures</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* 그래프 전용: 노드를 드래그하거나 랜덤 배치하기 위한 스타일 */
+      .graph-node {
+        position: absolute;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
+    <h1>Ⅳ. Graph Structures</h1>
+
+    <div class="ds-section">
+      <h3>Ⅰ. 인접 리스트 그래프 (Adjacency List Graph)</h3>
+      <div class="controls">
+        <input
+          type="text"
+          id="nodeInput"
+          placeholder="노드 이름"
+          style="width: 80px"
+        />
+        <button id="addNodeBtn">Add Node</button>
+        <br />
+        <input
+          type="text"
+          id="fromNode"
+          placeholder="From"
+          style="width: 60px"
+        />
+        <input type="text" id="toNode" placeholder="To" style="width: 60px" />
+        <button id="addEdgeBtn">Connect</button>
+      </div>
+      <div
+        id="graph-visualizer"
+        class="visualizer"
+        style="height: 500px; position: relative; overflow: hidden"
+      ></div>
+      <div class="description">
+        <strong>정의:</strong> 객체 간의 복잡한 관계를 정점(Vertex)과 이들을
+        잇는 간선(Edge)으로 표현하는 비선형 자료구조입니다.<br />
+        <strong>장단점:</strong> 세상의 모든 복잡한 관계(인맥, 지도 등)를 있는
+        그대로 표현할 수 있을 만큼 유연하지만, 트리나 리스트에 비해 알고리즘의
+        시간 복잡도가 높고 구현이 까다롭습니다.<br />
+        <strong>사용 사례:</strong> 내비게이션의 최단 경로 탐색, 소셜 네트워크
+        서비스의 친구 추천 시스템, 검색 엔진의 웹 페이지 랭킹 알고리즘 등에
+        필수적으로 활용됩니다.
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

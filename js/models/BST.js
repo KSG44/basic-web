@@ -30,7 +30,6 @@ export class BST {
     }
   }
 
-  // 탐색 경로 반환 (애니메이션용)
   searchPath(val) {
     let path = [];
     let curr = this.root;
@@ -40,7 +39,7 @@ export class BST {
       if (target === curr.val) return path;
       curr = target < curr.val ? curr.left : curr.right;
     }
-    return path; // 못 찾았을 경우 지금까지의 경로만 반환
+    return path;
   }
 
   delete(val) {
@@ -56,12 +55,10 @@ export class BST {
       node.right = this._deleteNode(node.right, val);
       return node;
     } else {
-      // 삭제할 노드 발견
       if (!node.left && !node.right) return null;
       if (!node.left) return node.right;
       if (!node.right) return node.left;
 
-      // 자식이 2개인 경우: 오른쪽 서브트리의 최소값(Successor) 찾기
       let temp = this._findMin(node.right);
       node.val = temp.val;
       node.right = this._deleteNode(node.right, temp.val);

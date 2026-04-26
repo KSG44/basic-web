@@ -1,10 +1,8 @@
 export class MaxHeap {
-  constructor() { this.heap = []; }
-
-  insert(val) {
-    this.heap.push(parseInt(val));
-    this.heapifyUp();
+  constructor() {
+    this.heap = [];
   }
+
   insert(val) {
     this.heap.push(parseInt(val));
     this.heapifyUp();
@@ -26,7 +24,6 @@ export class MaxHeap {
   extractMax() {
     if (this.heap.length === 0) return null;
     if (this.heap.length === 1) return this.heap.pop();
-
     const max = this.heap[0];
     this.heap[0] = this.heap.pop();
     this.heapifyDown();
@@ -40,7 +37,6 @@ export class MaxHeap {
       let leftChildIdx = 2 * index + 1;
       let rightChildIdx = 2 * index + 2;
       let swap = null;
-
       if (leftChildIdx < length) {
         if (this.heap[leftChildIdx] > this.heap[index]) swap = leftChildIdx;
       }
@@ -62,7 +58,7 @@ export class MaxHeap {
     if (index >= this.heap.length) return null;
     return {
       val: this.heap[index],
-      idx: index, // 추가
+      idx: index,
       left: this.toTree(2 * index + 1),
       right: this.toTree(2 * index + 2),
     };
