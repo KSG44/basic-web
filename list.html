@@ -1,47 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>List Structures</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
     <h1>Ⅰ. List Structures</h1>
 
     <div class="ds-section">
-        <h3>1. 단일 연결 리스트 (Singly Linked List)</h3>
-        <div class="controls">
-            <input type="text" id="llInput" placeholder="데이터">
-            <button id="appendBtn">Append</button>
-            <button id="removeFirstBtn">Remove First</button>
-        </div>
-        <div id="ll-visualizer" class="visualizer"></div>
-        <div class="description"><strong>특징:</strong> 각 노드가 다음 노드만을 가리키는 가장 기본적인 연결 리스트입니다.</div>
+      <h3>1. 단일 연결 리스트 (Singly Linked List)</h3>
+      <div class="controls">
+        <input type="text" id="llInput" placeholder="데이터" />
+        <button id="appendBtn">Append</button>
+        <button id="removeFirstBtn">Remove First</button>
+      </div>
+      <div id="ll-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 각 노드가 데이터와 다음 노드를 가리키는 하나의
+        포인터(Next)로 구성되어 단방향으로 연결된 선형 자료구조입니다.<br />
+        <strong>장단점:</strong> 구조가 단순하여 구현이 쉽고 메모리 낭비가
+        적지만, 뒤로 돌아갈 수 없으며 특정 노드를 찾기 위해 처음부터 순차 탐색을
+        해야 하므로 검색 효율은 떨어집니다.<br />
+        <strong>사용 사례:</strong> 메모리 공간이 한정된 환경에서의 단순 리스트
+        관리, 스택(Stack)의 기본 구현 등에 활용됩니다.
+      </div>
+    </div>
+    <div class="ds-section">
+      <h3>2. 양방향 연결 리스트 (Doubly Linked List)</h3>
+      <div class="controls">
+        <input type="text" id="dllInput" placeholder="데이터" />
+        <button id="dllAppendBtn">Append</button>
+        <button id="dllRemoveBtn">Remove Last</button>
+      </div>
+      <div id="dll-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 각 노드가 이전 노드(Prev)와 다음 노드(Next)를
+        가리키는 두 개의 포인터를 가져 양방향 탐색이 가능한 구조입니다.<br />
+        <strong>장단점:</strong> 앞뒤 방향으로 자유롭게 탐색할 수 있어 삽입과
+        삭제 시 이전 노드의 주소를 찾는 과정이 편리하지만, 노드마다 추가
+        포인터를 저장해야 하므로 메모리 사용량이 늘어납니다.<br />
+        <strong>사용 사례:</strong> 웹 브라우저의 '앞으로 가기/뒤로 가기'
+        히스토리, 음악 플레이어의 이전 곡/다음 곡 재생 목록 등에 필수적으로
+        사용됩니다.
+      </div>
     </div>
 
     <div class="ds-section">
-        <h3>2. 양방향 연결 리스트 (Doubly Linked List)</h3>
-        <div class="controls">
-            <input type="text" id="dllInput" placeholder="데이터">
-            <button id="dllAppendBtn">Append</button>
-            <button id="dllRemoveBtn">Remove Last</button>
-        </div>
-        <div id="dll-visualizer" class="visualizer"></div>
-        <div class="description"><strong>특징:</strong> 각 노드가 이전(prev)과 다음(next) 포인터를 모두 가져 양방향 탐색이 가능합니다.</div>
+      <h3>3. 원형 연결 리스트 (Circular Linked List)</h3>
+      <div class="controls">
+        <input type="text" id="cllInput" placeholder="데이터" />
+        <button id="cllAppendBtn">Append</button>
+        <button id="cllRemoveBtn">Remove First</button>
+      </div>
+      <div id="cll-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 마지막 노드의 포인터가 다시 첫 번째 노드(Head)를
+        가리켜 리스트 전체가 고리(Loop) 형태로 순환하는 구조입니다.<br />
+        <strong>장단점:</strong> 어느 노드에서 시작하더라도 모든 노드에 접근할
+        수 있으며 리스트의 끝을 만날 염려가 없으나, 종료 조건을 잘못 설정할 경우
+        무한 루프에 빠질 위험이 있습니다.<br />
+        <strong>사용 사례:</strong> 여러 프로세스가 CPU를 번갈아 사용하는 라운드
+        로빈(Round Robin) 스케줄링, 멀티플레이어 게임의 차례 관리 시스템 등에
+        응용됩니다.
+      </div>
     </div>
-
-    <div class="ds-section">
-        <h3>3. 원형 연결 리스트 (Circular Linked List)</h3>
-        <div class="controls">
-            <input type="text" id="cllInput" placeholder="데이터">
-            <button id="cllAppendBtn">Append</button>
-            <button id="cllRemoveBtn">Remove First</button>
-        </div>
-        <div id="cll-visualizer" class="visualizer"></div>
-        <div class="description"><strong>특징:</strong> 마지막 노드가 다시 Head를 가리켜 순환하는 구조입니다.</div>
-    </div>
-
     <script type="module" src="js/main.js"></script>
-</body>
+  </body>
 </html>

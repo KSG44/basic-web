@@ -103,3 +103,52 @@ button:hover { background-color: #1557b0; }
 }
 
 .back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-weight: bold; }
+
+/* 원형 리스트 전용 컨테이너 */
+.circular-visualizer {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    border: 2px dashed #dee2e6;
+    border-radius: 50%; /* 시각적으로 원 영역 표시 */
+    display: block; /* flex 해제 */
+}
+
+/* 원형 노드 개별 스타일 */
+.circular-node {
+    position: absolute;
+    transform: translate(-50%, -50%); /* 중심점 맞추기 */
+    transition: all 0.5s ease;
+}
+
+/* 노드 라벨 (Head, Tail) 스타일 */
+.node-label {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+    color: #d93025; /* 강조를 위한 붉은색 계열 */
+    white-space: nowrap;
+}
+
+.node-label.head {
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-label.tail {
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* SVG 화살표 레이어 */
+svg {
+    pointer-events: none; /* 화살표가 버튼 클릭을 방해하지 않도록 설정 */
+    z-index: 0;
+}
+
+.circular-node {
+    z-index: 1; /* 노드가 화살표보다 위에 오도록 설정 */
+}
