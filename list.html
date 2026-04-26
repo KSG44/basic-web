@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>List Structures</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
+    <h1>Ⅰ. List Structures</h1>
+
+    <div class="ds-section">
+        <h3>1. 단일 연결 리스트 (Singly Linked List)</h3>
+        <div class="controls">
+            <input type="text" id="llInput" placeholder="데이터">
+            <button id="appendBtn">Append</button>
+            <button id="removeFirstBtn">Remove First</button>
+        </div>
+        <div id="ll-visualizer" class="visualizer"></div>
+        <div class="description"><strong>특징:</strong> 각 노드가 다음 노드만을 가리키는 가장 기본적인 연결 리스트입니다.</div>
+    </div>
+
+    <div class="ds-section">
+        <h3>2. 양방향 연결 리스트 (Doubly Linked List)</h3>
+        <div class="controls">
+            <input type="text" id="dllInput" placeholder="데이터">
+            <button id="dllAppendBtn">Append</button>
+            <button id="dllRemoveBtn">Remove Last</button>
+        </div>
+        <div id="dll-visualizer" class="visualizer"></div>
+        <div class="description"><strong>특징:</strong> 각 노드가 이전(prev)과 다음(next) 포인터를 모두 가져 양방향 탐색이 가능합니다.</div>
+    </div>
+
+    <div class="ds-section">
+        <h3>3. 원형 연결 리스트 (Circular Linked List)</h3>
+        <div class="controls">
+            <input type="text" id="cllInput" placeholder="데이터">
+            <button id="cllAppendBtn">Append</button>
+            <button id="cllRemoveBtn">Remove First</button>
+        </div>
+        <div id="cll-visualizer" class="visualizer"></div>
+        <div class="description"><strong>특징:</strong> 마지막 노드가 다시 Head를 가리켜 순환하는 구조입니다.</div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

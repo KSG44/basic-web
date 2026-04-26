@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Hash Table</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
+    <h1>Ⅳ. Hash Table</h1>
+
+    <div class="ds-section">
+        <h3>Ⅰ. 해시 테이블 (Hash Table)</h3>
+        <div class="controls">
+            <input type="text" id="hashInput" placeholder="키 입력">
+            <button id="hashInsertBtn">Insert Key</button>
+        </div>
+        <div id="hash-visualizer" class="visualizer"></div>
+        <div class="description">
+            <strong>정의:</strong> 해시 함수를 통해 키 값을 고유한 인덱스로 변환하여 데이터를 저장하는 방식입니다.<br>
+            <strong>장단점:</strong> 평균 $O(1)$의 검색 속도를 보장하지만, 해시 충돌(Collision) 시 관리가 복잡해질 수 있습니다.<br>
+            <strong>활용 사례:</strong> 캐시(Cache) 시스템, 데이터베이스 인덱싱, 암호화 알고리즘 등에 사용됩니다.
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
