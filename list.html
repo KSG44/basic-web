@@ -66,6 +66,39 @@
         응용됩니다.
       </div>
     </div>
+    <div class="ds-section">
+      <h3>Ⅳ. 동적 배열 (ArrayList)</h3>
+      <div class="controls">
+        <input
+          type="text"
+          id="alInput"
+          placeholder="데이터"
+          style="width: 80px"
+        />
+        <input
+          type="number"
+          id="alIndex"
+          placeholder="인덱스"
+          style="width: 60px"
+        />
+        <button id="alAddBtn">Add Last</button>
+        <button id="alInsertBtn">Insert At</button>
+        <button id="alRemoveAtBtn">Remove At</button>
+        <button id="alGetBtn">Get (Search)</button>
+      </div>
+      <div id="al-visualizer" class="visualizer array-style"></div>
+
+      <div class="description">
+        <strong>정의:</strong> 연속된 메모리 공간에 데이터를 저장하며,
+        <strong>인덱스(Index)</strong>를 통해 각 요소에 즉시 접근할 수 있는 선형
+        자료구조입니다.<br />
+        <strong>장단점:</strong> 인덱스를 이용한 조회는 $O(1)$로 매우 빠르지만,
+        특정 위치에 삽입하거나 삭제할 경우 뒤쪽 데이터를 모두 한 칸씩 밀거나
+        당겨야 하므로 $O(n)$의 시간이 소요됩니다.<br />
+        <strong>사용 사례:</strong> 데이터 검색이 빈번하고 삽입/삭제가 적은 목록
+        표시, 고정된 크기의 데이터 집합 등에 활용됩니다.
+      </div>
+    </div>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

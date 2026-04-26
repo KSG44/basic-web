@@ -1,154 +1,298 @@
-body { 
-    font-family: 'Malgun Gothic', sans-serif; 
-    padding: 30px; 
-    background-color: #f4f7f9; 
-    line-height: 1.5; 
+/* --- 기본 스타일 (Global Styles) --- */
+body {
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  padding: 30px;
+  background-color: #f4f7f9;
+  line-height: 1.6;
+  color: #333;
 }
-h1 { text-align: center; color: #1a73e8; margin-bottom: 50px; }
-.ds-section { 
-    background: #ffffff; 
-    border-radius: 12px; 
-    padding: 30px; 
-    margin-bottom: 40px; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-}
-.ds-section h3 { 
-    color: #1a73e8; 
-    border-bottom: 3px solid #e8f0fe; 
-    padding-bottom: 12px; 
-    margin-top: 0; 
-}
-.controls { margin: 25px 0; }
-input { 
-    padding: 10px; 
-    border: 1px solid #ced4da; 
-    border-radius: 6px; 
-    font-size: 14px; 
-}
-button { 
-    padding: 10px 20px; 
-    background-color: #1a73e8; 
-    color: white; 
-    border: none; 
-    border-radius: 6px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    transition: background-color 0.2s; 
-}
-button:hover { background-color: #1557b0; } 
-.visualizer { 
-    min-height: 100px; 
-    padding: 25px; 
-    background: #f8f9fa; 
-    border: 2px dashed #dee2e6; 
-    border-radius: 10px; 
-    display: flex; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    margin-bottom: 25px; 
-}
-.node { 
-    padding: 12px 20px; 
-    background: #e8f0fe; 
-    border: 2px solid #1a73e8; 
-    margin: 5px; 
-    border-radius: 8px; 
-    font-weight: bold; 
-    color: #1a73e8;
-}
-.description {
-    display: block; 
-    font-size: 15px;
-    color: #444; 
-    background-color: #ffffff; 
-    border: 1px solid #e1e4e8; 
-    border-left: 6px solid #1a73e8; 
-    padding: 25px; 
-    margin-top: 20px; 
-    border-radius: 0 10px 10px 0; 
-    text-align: justify; 
-    line-height: 1.8; 
-    transition: all 0.3s ease; 
-}
-.description:hover {
-    background-color: #f0f7ff; 
-    border-color: #1a73e8;
-    transform: translateX(5px); 
-}
-#stack-visualizer { flex-direction: column-reverse; width: fit-content; }
-.ll-arrow { margin: 0 12px; font-weight: bold; color: #1a73e8; font-size: 20px; }
-.hash-bucket { width: 100%; border-bottom: 1px solid #f1f3f4; padding: 10px 0; display: flex; align-items: center; }
-.hash-index { font-weight: bold; width: 50px; color: #d93025; font-size: 16px; }
-.bst-node { background: #f3e5f5; border: 2px solid #9c27b0; color: #7b1fa2; }
 
-/* 허브 페이지 전용 */
-.hub-container { text-align: center; max-width: 900px; margin: 50px auto; }
-.menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+h1 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 50px;
+}
+
+/* --- 카드 레이아웃 (Section Styles) --- */
+.ds-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ds-section h3 {
+  color: #1a73e8;
+  border-bottom: 3px solid #e8f0fe;
+  padding-bottom: 12px;
+  margin-top: 0;
+}
+
+/* --- 컨트롤 및 입력창 (Controls) --- */
+.controls {
+  margin: 25px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #1557b0;
+  transform: translateY(-1px);
+}
+
+/* --- 시뮬레이터 공통 (Visualizer Base) --- */
+.visualizer {
+  min-height: 120px;
+  padding: 25px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.node {
+  padding: 12px 20px;
+  background: #e8f0fe;
+  border: 2px solid #1a73e8;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #1a73e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  transition: all 0.3s ease;
+}
+
+/* --- 설명 박스 (Description) --- */
+.description {
+  display: block;
+  font-size: 15px;
+  color: #444;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-left: 6px solid #1a73e8;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 0 10px 10px 0;
+  text-align: justify;
+  line-height: 1.8;
+  transition: all 0.3s ease;
+}
+
+.description:hover {
+  background-color: #f0f7ff;
+  border-color: #1a73e8;
+  transform: translateX(5px);
+}
+
+/* --- 1. Sequential (Stack, Queue) --- */
+#stack-visualizer {
+  flex-direction: column-reverse;
+  width: fit-content;
+  align-items: center;
+}
+
+/* --- 2. List (LL, DLL, Circular, ArrayList) --- */
+.ll-arrow {
+  margin: 0 5px;
+  font-weight: bold;
+  color: #1a73e8;
+  font-size: 20px;
+}
+
+/* 원형 리스트 전용 */
+.circular-visualizer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  border-radius: 50%;
+  display: block;
+}
+
+.circular-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.node-label {
+  position: absolute;
+  font-size: 11px;
+  font-weight: bold;
+  color: #d93025;
+  white-space: nowrap;
+}
+.node-label.head {
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node-label.tail {
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 어레이리스트 전용 */
+.array-style {
+  gap: 0;
+  padding: 30px;
+  overflow-x: auto;
+  align-items: flex-end;
+}
+.array-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.index-label {
+  font-size: 12px;
+  color: #d93025;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.array-style .node {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  height: 50px;
+  border: 1px solid #1a73e8;
+}
+.array-style .node:first-child {
+  border-radius: 8px 0 0 8px !important;
+}
+.array-style .node:last-child {
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* --- 3. Tree (BST) --- */
+.tree-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+.tree-children {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+  gap: 20px;
+}
+.bst-node {
+  background: #f3e5f5;
+  border: 2px solid #9c27b0;
+  color: #7b1fa2;
+  z-index: 10;
+}
+.tree-svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- 4. Hash Table --- */
+.hash-bucket {
+  width: 100%;
+  border-bottom: 1px solid #f1f3f4;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.hash-index {
+  font-weight: bold;
+  width: 60px;
+  color: #d93025;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* --- 허브 페이지 & 네비게이션 (Hub & Nav) --- */
+.hub-container {
+  text-align: center;
+  max-width: 900px;
+  margin: 50px auto;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
 
 .menu-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: #333;
-    border: 2px solid #e8f0fe;
-    transition: all 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #e8f0fe;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .menu-card:hover {
-    transform: translateY(-10px);
-    border-color: #1a73e8;
-    background: #f0f7ff;
+  transform: translateY(-10px);
+  border-color: #1a73e8;
+  background: #f0f7ff;
 }
 
-.back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-weight: bold; }
-
-/* 원형 리스트 전용 컨테이너 */
-.circular-visualizer {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 40px auto;
-    border: 2px dashed #dee2e6;
-    border-radius: 50%; /* 시각적으로 원 영역 표시 */
-    display: block; /* flex 해제 */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-link:hover {
+  text-decoration: underline;
 }
 
-/* 원형 노드 개별 스타일 */
-.circular-node {
-    position: absolute;
-    transform: translate(-50%, -50%); /* 중심점 맞추기 */
-    transition: all 0.5s ease;
-}
-
-/* 노드 라벨 (Head, Tail) 스타일 */
-.node-label {
-    position: absolute;
-    font-size: 11px;
-    font-weight: bold;
-    color: #d93025; /* 강조를 위한 붉은색 계열 */
-    white-space: nowrap;
-}
-
-.node-label.head {
-    top: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.node-label.tail {
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* SVG 화살표 레이어 */
 svg {
-    pointer-events: none; /* 화살표가 버튼 클릭을 방해하지 않도록 설정 */
-    z-index: 0;
+  pointer-events: none;
 }
 
-.circular-node {
-    z-index: 1; /* 노드가 화살표보다 위에 오도록 설정 */
+/* --- 기존 bst-node 스타일에 추가 --- */
+.bst-node {
+  background: #f3e5f5;
+  border: 2px solid #9c27b0;
+  color: #7b1fa2;
+  position: relative; /* 🌟 추가: z-index 활성화를 위해 필요 */
+  z-index: 10;        /* 🌟 추가: 선보다 위에 표시 */
+}
+
+/* --- tree-children 대칭 보정 --- */
+.tree-children > div {
+  min-width: 50px;    /* 🌟 추가: 자식이 없을 때도 자리를 차지하게 함 */
 }
