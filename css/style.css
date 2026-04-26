@@ -1,0 +1,135 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.ds-section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ds-section h3 {
+    margin-top: 0;
+    color: #0056b3;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+.visualizer {
+    min-height: 80px;
+    padding: 15px;
+    background-color: #f0f4f8;
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+}
+
+/* Stack Styles */
+#stack-visualizer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 200px;
+}
+.stack-node {
+    width: 80%;
+    height: 35px;
+    background-color: #ffcccc;
+    border: 1px solid #ff0000;
+    margin: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* Queue Styles */
+.queue-node {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    background-color: #ccffcc;
+    border: 1px solid #00aa00;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 4px;
+}
+
+/* Linked List Styles */
+.ll-node {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #ccccff;
+    border: 1px solid #0000ff;
+    border-radius: 4px;
+    text-align: center;
+}
+.ll-arrow {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Hash Table Styles */
+.hash-bucket {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.hash-index {
+    width: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.hash-item {
+    padding: 5px 10px;
+    background-color: #fff2cc;
+    border: 1px solid #d6b656;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+/* BST Styles */
+.bst-node {
+    padding: 5px;
+    margin: 2px 0;
+    background-color: #e1d5e7;
+    border: 1px solid #9673a6;
+    display: inline-block;
+    border-radius: 4px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>통합 자료구조 시뮬레이터</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h1>통합 자료구조 시뮬레이터</h1>
+
+    <div class="ds-section">
+        <h3>1. 스택 (Stack - LIFO)</h3>
+        <div class="controls">
+            <input type="text" id="stackInput" placeholder="데이터 입력" />
+            <button id="pushBtn">Push</button>
+            <button id="popBtn">Pop</button>
+        </div>
+        <div id="stack-visualizer" class="visualizer"></div>
+    </div>
+
+    <div class="ds-section">
+        <h3>2. 큐 (Queue - FIFO)</h3>
+        <div class="controls">
+            <input type="text" id="queueInput" placeholder="데이터 입력" />
+            <button id="enqueueBtn">Enqueue</button>
+            <button id="dequeueBtn">Dequeue</button>
+        </div>
+        <div id="queue-visualizer" class="visualizer"></div>
+    </div>
+
+    <div class="ds-section">
+        <h3>3. 단일 연결 리스트 (Singly Linked List)</h3>
+        <div class="controls">
+            <input type="text" id="llInput" placeholder="데이터 입력" />
+            <button id="appendBtn">Append (추가)</button>
+            <button id="removeFirstBtn">Remove First (앞 삭제)</button>
+        </div>
+        <div id="ll-visualizer" class="visualizer" style="display: flex; flex-wrap: wrap; align-items: center;"></div>
+    </div>
+
+    <div class="ds-section">
+        <h3>4. 해시 테이블 (Hash Table - 크기 5)</h3>
+        <p>해시 함수: 문자열 길이 합 % 5 (충돌 시 체이닝)</p>
+        <div class="controls">
+            <input type="text" id="hashInput" placeholder="문자열 입력" />
+            <button id="hashInsertBtn">Insert</button>
+        </div>
+        <div id="hash-visualizer" class="visualizer"></div>
+    </div>
+
+    <div class="ds-section">
+        <h3>5. 이진 탐색 트리 (Binary Search Tree)</h3>
+        <div class="controls">
+            <input type="number" id="bstInput" placeholder="숫자 입력" />
+            <button id="bstInsertBtn">Insert</button>
+        </div>
+        <div id="bst-visualizer" class="visualizer"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
