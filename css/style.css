@@ -1,135 +1,24 @@
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
+body { font-family: 'Malgun Gothic', sans-serif; padding: 20px; background-color: #f0f2f5; }
+h1 { text-align: center; color: #1a73e8; }
+.ds-section { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.controls { margin-bottom: 15px; }
+input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+button { padding: 8px 15px; background-color: #1a73e8; color: white; border: none; border-radius: 4px; cursor: pointer; }
+button:hover { background-color: #1557b0; }
+.visualizer { min-height: 60px; padding: 15px; background: #fafafa; border: 1px dashed #bbb; border-radius: 4px; display: flex; align-items: center; flex-wrap: wrap; }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
+/* 공통 노드 스타일 */
+.node { padding: 10px 15px; background: #e8f0fe; border: 1px solid #1a73e8; margin: 5px; border-radius: 4px; min-width: 40px; text-align: center; }
 
-.ds-section {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+/* Stack 전용 (세로 쌓기) */
+#stack-visualizer { flex-direction: column-reverse; width: fit-content; }
 
-.ds-section h3 {
-    margin-top: 0;
-    color: #0056b3;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-}
+/* Linked List 화살표 */
+.ll-arrow { margin: 0 10px; font-weight: bold; color: #555; }
 
-.controls {
-    margin-bottom: 15px;
-}
+/* Hash Table 버킷 */
+.hash-bucket { width: 100%; border-bottom: 1px solid #eee; padding: 5px 0; display: flex; align-items: center; }
+.hash-index { font-weight: bold; width: 40px; color: #d93025; }
 
-input {
-    padding: 8px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 8px 12px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-button:hover {
-    background-color: #004494;
-}
-
-.visualizer {
-    min-height: 80px;
-    padding: 15px;
-    background-color: #f0f4f8;
-    border: 1px dashed #aaa;
-    border-radius: 4px;
-}
-
-/* Stack Styles */
-#stack-visualizer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 200px;
-}
-.stack-node {
-    width: 80%;
-    height: 35px;
-    background-color: #ffcccc;
-    border: 1px solid #ff0000;
-    margin: 3px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-}
-
-/* Queue Styles */
-.queue-node {
-    display: inline-block;
-    width: 60px;
-    height: 40px;
-    background-color: #ccffcc;
-    border: 1px solid #00aa00;
-    margin-right: 5px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 4px;
-}
-
-/* Linked List Styles */
-.ll-node {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #ccccff;
-    border: 1px solid #0000ff;
-    border-radius: 4px;
-    text-align: center;
-}
-.ll-arrow {
-    display: inline-block;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-/* Hash Table Styles */
-.hash-bucket {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-.hash-index {
-    width: 30px;
-    font-weight: bold;
-    margin-right: 10px;
-}
-.hash-item {
-    padding: 5px 10px;
-    background-color: #fff2cc;
-    border: 1px solid #d6b656;
-    margin-right: 5px;
-    border-radius: 4px;
-}
-
-/* BST Styles */
-.bst-node {
-    padding: 5px;
-    margin: 2px 0;
-    background-color: #e1d5e7;
-    border: 1px solid #9673a6;
-    display: inline-block;
-    border-radius: 4px;
-}
+/* BST 노드 */
+.bst-node { background: #f3e5f5; border: 1px solid #9c27b0; }
