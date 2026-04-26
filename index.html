@@ -1,63 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>전공자용 통합 자료구조 시뮬레이터</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>통합 자료구조 시뮬레이터</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Structure Master - 시뮬레이터 및 가이드</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Data Structure Integrated Simulator</h1>
 
     <div class="ds-section">
-        <h3>1. 스택 (Stack)</h3>
-        <div class="controls">
-            <input type="text" id="stackInput" placeholder="데이터 입력">
-            <button id="pushBtn">Push</button>
-            <button id="popBtn">Pop</button>
-        </div>
-        <div id="stack-visualizer" class="visualizer"></div>
+      <h3>Ⅰ. 스택 (Stack)</h3>
+      <div class="controls">
+        <input type="text" id="stackInput" placeholder="데이터 입력" />
+        <button id="pushBtn">Push</button>
+        <button id="popBtn">Pop</button>
+      </div>
+      <div id="stack-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 스택은 한쪽 끝에서만 삽입과 삭제가 이루어지는
+        <strong>후입선출(LIFO, Last-In First-Out)</strong> 원리의 선형
+        자료구조입니다.<br />
+        <strong>장단점:</strong> 데이터의 추가와 제거가 $O(1)$의 속도로 매우
+        빠르지만, 중간에 위치한 데이터에 직접 접근할 수 없다는 단점이
+        있습니다.<br />
+        <strong>활용 사례:</strong> 웹 브라우저의 '뒤로 가기', 문서 편집기의
+        '되돌리기(Undo)', 함수 호출의 실행 환경(Call Stack) 관리 등에 필수적으로
+        사용됩니다.
+      </div>
     </div>
 
     <div class="ds-section">
-        <h3>2. 큐 (Queue)</h3>
-        <div class="controls">
-            <input type="text" id="queueInput" placeholder="데이터 입력">
-            <button id="enqueueBtn">Enqueue</button>
-            <button id="dequeueBtn">Dequeue</button>
-        </div>
-        <div id="queue-visualizer" class="visualizer"></div>
+      <h3>Ⅱ. 큐 (Queue)</h3>
+      <div class="controls">
+        <input type="text" id="queueInput" placeholder="데이터 입력" />
+        <button id="enqueueBtn">Enqueue</button>
+        <button id="dequeueBtn">Dequeue</button>
+      </div>
+      <div id="queue-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 큐는 한쪽에서는 삽입, 반대쪽에서는 삭제가
+        일어나는 <strong>선입선출(FIFO, First-In First-Out)</strong> 방식의
+        자료구조입니다.<br />
+        <strong>장단점:</strong> 데이터의 순서를 보장하며 처리하기에 적합하지만,
+        스택과 마찬가지로 중간 요소의 탐색이나 삭제가 비효율적입니다.<br />
+        <strong>활용 사례:</strong> 프린터의 출력 대기열, 은행 창구의 번호표
+        시스템, 프로세스 스케줄링 및 네트워크 패킷 처리 버퍼 등에 널리
+        활용됩니다.
+      </div>
     </div>
 
     <div class="ds-section">
-        <h3>3. 단일 연결 리스트 (Singly Linked List)</h3>
-        <div class="controls">
-            <input type="text" id="llInput" placeholder="데이터 입력">
-            <input type="number" id="llIndex" placeholder="인덱스" style="width: 80px;">
-            <button id="appendBtn">Append</button>
-            <button id="insertAtBtn">Insert At</button>
-            <button id="removeFirstBtn">Remove First</button>
-        </div>
-        <div id="ll-visualizer" class="visualizer"></div>
+      <h3>Ⅲ. 단일 연결 리스트 (Singly Linked List)</h3>
+      <div class="controls">
+        <input type="text" id="llInput" placeholder="데이터 입력" />
+        <input
+          type="number"
+          id="llIndex"
+          placeholder="인덱스"
+          style="width: 80px"
+        />
+        <button id="appendBtn">Append</button>
+        <button id="insertAtBtn">Insert At</button>
+        <button id="removeFirstBtn">Remove First</button>
+      </div>
+      <div id="ll-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 데이터 필드와 다음 노드를 가리키는 주소 필드를
+        가진 <strong>'노드(Node)'</strong>들이 체인처럼 연결된 구조입니다.<br />
+        <strong>장단점:</strong> 새로운 요소의 삽입과 삭제가 유연하며 메모리를
+        동적으로 활용할 수 있으나, 특정 위치를 찾기 위해 head부터 순차 탐색해야
+        하므로 검색 속도가 느립니다.<br />
+        <strong>활용 사례:</strong> 음악 플레이어의 재생 목록, 이미지 뷰어의
+        이전/다음 이미지 관리, 다른 복합 자료구조(해시 테이블 등)의 기본 구성
+        요소로 쓰입니다.
+      </div>
     </div>
 
     <div class="ds-section">
-        <h3>4. 해시 테이블 (Hash Table)</h3>
-        <div class="controls">
-            <input type="text" id="hashInput" placeholder="키 입력">
-            <button id="hashInsertBtn">Insert</button>
-        </div>
-        <div id="hash-visualizer" class="visualizer"></div>
+      <h3>Ⅳ. 해시 테이블 (Hash Table)</h3>
+      <div class="controls">
+        <input type="text" id="hashInput" placeholder="키 입력" />
+        <button id="hashInsertBtn">Insert</button>
+      </div>
+      <div id="hash-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 해시 함수를 통해 키(Key)를 고유한 인덱스로
+        변환하여 값을 저장하는
+        <strong>키-값 쌍(Key-Value Pair)</strong> 구조입니다.<br />
+        <strong>장단점:</strong> 평균 $O(1)$의 시간 복잡도로 매우 빠른 검색
+        속도를 자랑하지만, 서로 다른 키가 같은 인덱스로 배정되는 '충돌' 발생 시
+        관리가 복잡해질 수 있습니다.<br />
+        <strong>활용 사례:</strong> 데이터베이스의 인덱싱, 캐시(Cache) 구현,
+        암호화 알고리즘, 프로그래밍 언어의 딕셔너리(Dictionary) 객체 구현 등에
+        사용됩니다.
+      </div>
     </div>
 
     <div class="ds-section">
-        <h3>5. 이진 탐색 트리 (BST)</h3>
-        <div class="controls">
-            <input type="number" id="bstInput" placeholder="숫자 입력">
-            <button id="bstInsertBtn">Insert</button>
-        </div>
-        <div id="bst-visualizer" class="visualizer"></div>
+      <h3>Ⅴ. 이진 탐색 트리 (Binary Search Tree)</h3>
+      <div class="controls">
+        <input type="number" id="bstInput" placeholder="숫자 입력" />
+        <button id="bstInsertBtn">Insert</button>
+      </div>
+      <div id="bst-visualizer" class="visualizer"></div>
+      <div class="description">
+        <strong>정의:</strong> 부모 노드를 기준으로 왼쪽 자식은 더 작은 값을,
+        오른쪽 자식은 더 큰 값을 가지는
+        <strong>계층적 트리 구조</strong>입니다.<br />
+        <strong>장단점:</strong> 균형이 잡힌 상태에서 검색, 삽입, 삭제가 모두
+        $O(\log n)$으로 빠르고 데이터가 항상 정렬된 상태를 유지하지만, 편향된
+        트리 형성 시 성능이 급격히 저하됩니다.<br />
+        <strong>활용 사례:</strong> 정렬된 대용량 데이터의 효율적인 검색, 계층적
+        데이터 저장, 파일 시스템 관리 등에 주로 응용됩니다.
+      </div>
     </div>
 
     <script type="module" src="js/main.js"></script>
-</body>
+  </body>
 </html>
