@@ -2,101 +2,70 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>List Structures</title>
+    <title>연결 리스트 시뮬레이터</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
-    <h1>Ⅰ. List Structures</h1>
+    <div class="main-container">
+      <div class="header-area">
+        <a href="index.html" class="back-btn">← 뒤로가기</a>
+        <h1 class="simulator-title">연결 리스트 시뮬레이터</h1>
+      </div>
 
-    <div class="ds-section">
-      <h3>1. 단일 연결 리스트 (Singly Linked List)</h3>
-      <div class="controls">
-        <input type="text" id="llInput" placeholder="데이터" />
-        <button id="appendBtn">Append</button>
-        <button id="removeFirstBtn">Remove First</button>
-      </div>
-      <div id="ll-visualizer" class="visualizer"></div>
-      <div class="description">
-        <strong>정의:</strong> 각 노드가 데이터와 다음 노드를 가리키는 하나의
-        포인터(Next)로 구성되어 단방향으로 연결된 선형 자료구조입니다.<br />
-        <strong>장단점:</strong> 구조가 단순하여 구현이 쉽고 메모리 낭비가
-        적지만, 뒤로 돌아갈 수 없으며 특정 노드를 찾기 위해 처음부터 순차 탐색을
-        해야 하므로 검색 효율은 떨어집니다.<br />
-        <strong>사용 사례:</strong> 메모리 공간이 한정된 환경에서의 단순 리스트
-        관리, 스택(Stack)의 기본 구현 등에 활용됩니다.
-      </div>
-    </div>
-    <div class="ds-section">
-      <h3>2. 양방향 연결 리스트 (Doubly Linked List)</h3>
-      <div class="controls">
-        <input type="text" id="dllInput" placeholder="데이터" />
-        <button id="dllAppendBtn">Append</button>
-        <button id="dllRemoveBtn">Remove Last</button>
-      </div>
-      <div id="dll-visualizer" class="visualizer"></div>
-      <div class="description">
-        <strong>정의:</strong> 각 노드가 이전 노드(Prev)와 다음 노드(Next)를
-        가리키는 두 개의 포인터를 가져 양방향 탐색이 가능한 구조입니다.<br />
-        <strong>장단점:</strong> 앞뒤 방향으로 자유롭게 탐색할 수 있어 삽입과
-        삭제 시 이전 노드의 주소를 찾는 과정이 편리하지만, 노드마다 추가
-        포인터를 저장해야 하므로 메모리 사용량이 늘어납니다.<br />
-        <strong>사용 사례:</strong> 웹 브라우저의 '앞으로 가기/뒤로 가기'
-        히스토리, 음악 플레이어의 이전 곡/다음 곡 재생 목록 등에 필수적으로
-        사용됩니다.
-      </div>
-    </div>
+      <div class="simulator-box">
+        <div class="control-group">
+          <select
+            id="listTypeSelect"
+            class="control-select"
+            style="width: 200px; cursor: pointer"
+          >
+            <option value="singly">단일 연결 리스트</option>
+            <option value="doubly">양방향 연결 리스트</option>
+            <option value="circular">원형 연결 리스트</option>
+          </select>
+          <input
+            type="text"
+            id="listInput"
+            class="control-input"
+            placeholder="값 입력"
+            style="flex-grow: 1"
+          />
+          <button id="listAddFrontBtn" class="btn btn-purple">맨앞 추가</button>
+          <button id="listAddLastBtn" class="btn btn-purple">맨뒤 추가</button>
+        </div>
 
-    <div class="ds-section">
-      <h3>3. 원형 연결 리스트 (Circular Linked List)</h3>
-      <div class="controls">
-        <input type="text" id="cllInput" placeholder="데이터" />
-        <button id="cllAppendBtn">Append</button>
-        <button id="cllRemoveBtn">Remove First</button>
-      </div>
-      <div id="cll-visualizer" class="visualizer"></div>
-      <div class="description">
-        <strong>정의:</strong> 마지막 노드의 포인터가 다시 첫 번째 노드(Head)를
-        가리켜 리스트 전체가 고리(Loop) 형태로 순환하는 구조입니다.<br />
-        <strong>장단점:</strong> 어느 노드에서 시작하더라도 모든 노드에 접근할
-        수 있으며 리스트의 끝을 만날 염려가 없으나, 종료 조건을 잘못 설정할 경우
-        무한 루프에 빠질 위험이 있습니다.<br />
-        <strong>사용 사례:</strong> 여러 프로세스가 CPU를 번갈아 사용하는 라운드
-        로빈(Round Robin) 스케줄링, 멀티플레이어 게임의 차례 관리 시스템 등에
-        응용됩니다.
-      </div>
-    </div>
-    <div class="ds-section">
-      <h3>Ⅳ. 동적 배열 (ArrayList)</h3>
-      <div class="controls">
-        <input
-          type="text"
-          id="alInput"
-          placeholder="데이터"
-          style="width: 80px"
-        />
-        <input
-          type="number"
-          id="alIndex"
-          placeholder="인덱스"
-          style="width: 60px"
-        />
-        <button id="alAddBtn">Add Last</button>
-        <button id="alInsertBtn">Insert At</button>
-        <button id="alRemoveAtBtn">Remove At</button>
-        <button id="alGetBtn">Get (Search)</button>
-      </div>
-      <div id="al-visualizer" class="visualizer array-style"></div>
+        <div class="control-group">
+          <input
+            type="number"
+            id="listIndex"
+            class="control-input"
+            placeholder="인덱스"
+            style="width: 100px"
+          />
+          <button id="listInsertBtn" class="btn btn-green">
+            중간 삽입 O(n)
+          </button>
+          <button id="listRemoveBtn" class="btn btn-red">중간 삭제 O(n)</button>
+          <button id="listSearchBtn" class="btn btn-blue">값 검색 O(n)</button>
+          <button id="listReverseBtn" class="btn btn-orange">
+            리스트 역순
+          </button>
+        </div>
 
-      <div class="description">
-        <strong>정의:</strong> 연속된 메모리 공간에 데이터를 저장하며,
-        <strong>인덱스(Index)</strong>를 통해 각 요소에 즉시 접근할 수 있는 선형
-        자료구조입니다.<br />
-        <strong>장단점:</strong> 인덱스를 이용한 조회는 $O(1)$로 매우 빠르지만,
-        특정 위치에 삽입하거나 삭제할 경우 뒤쪽 데이터를 모두 한 칸씩 밀거나
-        당겨야 하므로 $O(n)$의 시간이 소요됩니다.<br />
-        <strong>사용 사례:</strong> 데이터 검색이 빈번하고 삽입/삭제가 적은 목록
-        표시, 고정된 크기의 데이터 집합 등에 활용됩니다.
+        <div
+          id="list-visualizer"
+          class="visualizer-area"
+          style="padding: 40px; min-height: 250px"
+        ></div>
+
+        <div class="info-panel">
+          • 노드 개수: <span id="listSize" style="font-weight: bold">0</span
+          ><br />
+          • 리스트 타입:
+          <span id="listTypeLabel" style="font-weight: bold"
+            >단일 연결 리스트</span
+          >
+        </div>
       </div>
     </div>
     <script type="module" src="js/main.js"></script>

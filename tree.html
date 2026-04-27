@@ -2,97 +2,94 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>Tree Structures</title>
+    <title>트리 구조 시뮬레이터</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
-    <h1>Ⅲ. Tree Structures</h1>
-
-    <div class="ds-section">
-      <h3>Ⅰ. 이진 탐색 트리 (Binary Search Tree)</h3>
-      <div class="controls">
-        <input
-          type="number"
-          id="bstInput"
-          placeholder="값 입력"
-          style="width: 80px"
-        />
-        <button id="bstInsertBtn">Insert</button>
-        <button id="bstSearchBtn">Search (Find)</button>
-        <button id="bstDeleteBtn">Delete</button>
+    <div class="main-container">
+      <div class="header-area">
+        <a href="index.html" class="back-btn">← 뒤로가기</a>
+        <h1 class="simulator-title">트리 구조 시뮬레이터</h1>
       </div>
-      <div
-        id="bst-inorder-result"
-        style="
-          margin-bottom: 15px;
-          font-weight: bold;
-          color: #1a73e8;
-          min-height: 24px;
-        "
-      ></div>
-      <div
-        id="bst-visualizer"
-        class="visualizer"
-        style="height: 400px; position: relative; overflow: auto"
-      ></div>
-      <div class="description">
-        <strong>정의:</strong> 각 노드가 최대 두 개의 자식을 가지며, 왼쪽 자식은
-        부모보다 작은 값, 오른쪽 자식은 부모보다 큰 값을 가지도록 설계된 계층적
-        자료구조입니다.
+
+      <div class="simulator-box">
+        <div class="control-group">
+          <select
+            id="treeTypeSelect"
+            class="control-select"
+            style="width: 200px; cursor: pointer"
+          >
+            <option value="bst">이진 탐색 트리 (BST)</option>
+            <option value="avl">AVL 트리 (자가 균형)</option>
+            <option value="heap">최대 힙 (Max Heap)</option>
+          </select>
+          <input
+            type="number"
+            id="treeInput"
+            class="control-input"
+            placeholder="값 입력"
+            style="flex-grow: 1"
+          />
+          <button id="treeInsertBtn" class="btn btn-green">
+            노드 추가 O(log n)
+          </button>
+          <button id="treeDeleteBtn" class="btn btn-red">
+            노드 삭제 O(log n)
+          </button>
+          <button id="treeSearchBtn" class="btn btn-purple">
+            값 검색 O(log n)
+          </button>
+        </div>
+
+        <div class="control-group" id="treeExtraControls">
+          <button id="treeInorderBtn" class="btn btn-blue">중위 순회</button>
+          <button id="treePreorderBtn" class="btn btn-blue">전위 순회</button>
+          <button id="treePostorderBtn" class="btn btn-purple">
+            후위 순회
+          </button>
+          <button id="treeClearBtn" class="btn btn-gray">초기화</button>
+        </div>
+
+        <div
+          id="tree-result"
+          style="
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #1e3a8a;
+            min-height: 24px;
+          "
+        ></div>
+
+        <div
+          id="heap-array-visualizer"
+          class="visualizer-area array-style"
+          style="
+            min-height: 80px;
+            margin-bottom: 15px;
+            display: none;
+            padding: 20px;
+          "
+        ></div>
+
+        <div
+          id="tree-visualizer"
+          class="visualizer-area"
+          style="height: 400px; align-items: flex-start; padding-top: 30px"
+        ></div>
+
+        <div class="info-panel">
+          • 트리 높이: <span id="treeHeight" style="font-weight: bold">0</span
+          ><br />
+          • 현재 모드:
+          <span id="treeTypeLabel" style="font-weight: bold"
+            >이진 탐색 트리 (BST)</span
+          ><br />
+          <span style="color: #94a3b8; font-size: 0.85rem"
+            >* 시간 복잡도: 검색/삽입/삭제 O(log n) (균형 트리 기준)</span
+          >
+        </div>
       </div>
     </div>
-
-    <div class="ds-section">
-      <h3>Ⅱ. AVL 트리 (Self-Balancing Tree)</h3>
-      <div class="controls">
-        <input
-          type="number"
-          id="avlInput"
-          placeholder="값 입력"
-          style="width: 80px"
-        />
-        <button id="avlInsertBtn">Insert</button>
-      </div>
-      <div
-        id="avl-visualizer"
-        class="visualizer"
-        style="height: 400px; position: relative; overflow: auto"
-      ></div>
-      <div class="description">
-        <strong>정의:</strong> 모든 노드에서 서브트리의 높이 차이가 1 이하가
-        되도록 스스로 균형을 유지하는 자가 균형 트리입니다.
-      </div>
-    </div>
-
-    <div class="ds-section">
-      <h3>Ⅲ. 최대 힙 (Max Heap)</h3>
-      <div class="controls">
-        <input
-          type="number"
-          id="heapInput"
-          placeholder="값 입력"
-          style="width: 80px"
-        />
-        <button id="heapInsertBtn">Insert</button>
-        <button id="heapExtractBtn">Extract Max</button>
-      </div>
-      <div
-        id="heap-visualizer"
-        class="visualizer"
-        style="height: 350px; position: relative; overflow: auto"
-      ></div>
-      <div
-        id="heap-array-visualizer"
-        class="visualizer array-style"
-        style="min-height: 80px; margin-top: 15px"
-      ></div>
-      <div class="description">
-        <strong>정의:</strong> 부모 노드가 자식 노드보다 항상 크거나 같은 완전
-        이진 트리 형식의 자료구조입니다.
-      </div>
-    </div>
-
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

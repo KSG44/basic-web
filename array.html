@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>동적 배열 시뮬레이터</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-area">
+        <a href="index.html" class="back-btn">← 뒤로가기</a>
+        <h1 class="simulator-title">동적 배열 시뮬레이터</h1>
+      </div>
+
+      <div class="simulator-box">
+        <div class="control-group">
+          <input
+            type="text"
+            id="arrInput"
+            class="control-input"
+            placeholder="값 입력"
+            style="flex-grow: 1"
+          />
+          <input
+            type="number"
+            id="arrIndex"
+            class="control-input"
+            placeholder="인덱스 입력 (접근/삽입용)"
+            style="width: 180px"
+          />
+          <button id="arrAddLastBtn" class="btn btn-blue">맨뒤 추가</button>
+          <button id="arrInsertBtn" class="btn btn-green">중간 삽입</button>
+          <button id="arrRemoveLastBtn" class="btn btn-red">맨뒤 삭제</button>
+        </div>
+
+        <div class="control-group">
+          <button id="arrGetBtn" class="btn btn-purple">
+            인덱스 접근 O(1)
+          </button>
+          <button
+            id="arrSearchBtn"
+            class="btn"
+            style="background-color: #4f46e5"
+          >
+            값 검색 O(n)
+          </button>
+          <button id="arrSortBtn" class="btn btn-orange">정렬</button>
+          <button id="arrReverseBtn" class="btn btn-teal">역순</button>
+          <button id="arrClearBtn" class="btn btn-gray">초기화</button>
+        </div>
+
+        <div
+          id="array-visualizer"
+          class="visualizer-area array-style"
+          style="justify-content: flex-start; padding: 20px"
+        ></div>
+
+        <div class="info-panel">
+          • 배열 크기(Size):
+          <span id="arrSize" style="font-weight: bold">0</span><br />
+          • 용량(Capacity):
+          <span id="arrCapacity" style="font-weight: bold">4</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
