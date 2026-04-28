@@ -305,6 +305,17 @@ window.onload = () => {
       }
       updateLinearUI();
     };
+    document.getElementById("linearPeekBtn").onclick = () => {
+      const type = typeSelect.value;
+      const arr = getActiveLinear().toArray();
+      if (arr.length === 0) {
+        alert("현재 자료구조가 비어있습니다.");
+      } else {
+        // 스택은 맨 위(마지막), 큐와 데크는 맨 앞(처음) 값을 확인
+        const peekValue = type === "stack" ? arr[arr.length - 1] : arr[0];
+        alert(`Peek (확인) 결과: ${peekValue}`);
+      }
+    };
     updateLinearUI();
   }
 };
