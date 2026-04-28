@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>연결 리스트 시뮬레이터</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/list.css" />
   </head>
-  <body>
+  <body class="page-list">
     <div class="main-container">
       <div class="header-area">
         <a href="index.html" class="back-btn">← 뒤로가기</a>
@@ -16,8 +19,7 @@
         <div class="control-group">
           <select
             id="listTypeSelect"
-            class="control-select"
-            style="width: 200px; cursor: pointer"
+            class="control-select type-select"
           >
             <option value="singly">단일 연결 리스트</option>
             <option value="doubly">양방향 연결 리스트</option>
@@ -26,9 +28,8 @@
           <input
             type="text"
             id="listInput"
-            class="control-input"
+            class="control-input value-input"
             placeholder="값 입력"
-            style="flex-grow: 1"
           />
           <button id="listAddFrontBtn" class="btn btn-purple">맨앞 추가</button>
           <button id="listAddLastBtn" class="btn btn-purple">맨뒤 추가</button>
@@ -38,9 +39,8 @@
           <input
             type="number"
             id="listIndex"
-            class="control-input"
+            class="control-input index-input"
             placeholder="인덱스"
-            style="width: 100px"
           />
           <button id="listInsertBtn" class="btn btn-green">
             중간 삽입 O(n)
@@ -54,17 +54,13 @@
 
         <div
           id="list-visualizer"
-          class="visualizer-area"
-          style="padding: 40px; min-height: 250px"
+          class="visualizer-area list-visualizer"
         ></div>
 
         <div class="info-panel">
-          • 노드 개수: <span id="listSize" style="font-weight: bold">0</span
-          ><br />
+          • 노드 개수: <span id="listSize" class="stat-value">0</span><br />
           • 리스트 타입:
-          <span id="listTypeLabel" style="font-weight: bold"
-            >단일 연결 리스트</span
-          >
+          <span id="listTypeLabel" class="stat-value">단일 연결 리스트</span>
         </div>
       </div>
     </div>

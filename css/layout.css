@@ -1,35 +1,19 @@
-/* --- Global Styles --- */
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-
-body {
-  font-family:
-    "Pretendard",
-    -apple-system,
-    BlinkMacSystemFont,
-    system-ui,
-    Roboto,
-    sans-serif;
-  background-color: #f4f6fa;
-  color: #333;
-  margin: 0;
-  padding: 40px;
-  line-height: 1.5;
-}
-
-/* --- Main Index Layout --- */
 .main-container {
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .main-header {
   text-align: center;
   margin-bottom: 50px;
 }
+
 .main-header h1 {
   font-size: 2.5rem;
   color: #1e3a8a;
   margin-bottom: 10px;
 }
+
 .main-header p {
   color: #64748b;
   font-size: 1.1rem;
@@ -40,6 +24,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
+
 .ds-card {
   background: #ffffff;
   border-radius: 16px;
@@ -52,34 +37,38 @@ body {
     box-shadow 0.2s ease;
   border: 1px solid transparent;
 }
+
 .ds-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   border-color: #e2e8f0;
 }
+
 .ds-card h2 {
   font-size: 1.8rem;
   color: #1e293b;
   margin: 0 0 15px 0;
 }
+
 .ds-card .sub-title {
   display: block;
   color: #64748b;
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
+
 .ds-card .desc {
   color: #94a3b8;
   margin: 0;
   font-size: 0.95rem;
 }
 
-/* --- Simulator Layout --- */
 .header-area {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 }
+
 .back-btn {
   background-color: #475569;
   color: white;
@@ -89,12 +78,14 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
 }
+
 .simulator-title {
   text-align: center;
   color: #1e3a8a;
   flex-grow: 1;
   margin-right: 80px;
 }
+
 .simulator-box {
   background: white;
   border-radius: 12px;
@@ -109,6 +100,7 @@ body {
   margin-bottom: 15px;
   align-items: center;
 }
+
 .control-input,
 .control-select {
   padding: 10px 15px;
@@ -118,6 +110,7 @@ body {
   font-family: inherit;
   outline: none;
 }
+
 .control-input:focus,
 .control-select:focus {
   border-color: #3b82f6;
@@ -133,24 +126,31 @@ body {
   font-size: 0.95rem;
   font-family: inherit;
 }
+
 .btn-blue {
   background-color: #2563eb;
 }
+
 .btn-green {
   background-color: #16a34a;
 }
+
 .btn-red {
   background-color: #dc2626;
 }
+
 .btn-purple {
   background-color: #9333ea;
 }
+
 .btn-orange {
   background-color: #ea580c;
 }
+
 .btn-teal {
   background-color: #0d9488;
 }
+
 .btn-gray {
   background-color: #64748b;
 }
@@ -168,91 +168,9 @@ body {
   overflow: auto;
   padding: 20px;
 }
+
 .info-panel {
   font-size: 0.9rem;
   color: #475569;
   line-height: 1.6;
-}
-
-/* =========================================
-   자료구조별 개별 노드 디자인 (핵심 파트!)
-========================================= */
-
-/* 1. 스택/큐/데크 (주황색 큰 블록) */
-.linear-node {
-  width: 150px;
-  height: 50px;
-  background-color: #ea580c;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 5px;
-  position: relative;
-  z-index: 10;
-}
-.top-indicator {
-  font-size: 0.8rem;
-  color: #ea580c;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-/* 2. 연결 리스트 (보라색 블록) */
-.list-node {
-  background-color: #9333ea;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-.list-arrow {
-  color: #9333ea;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0 10px;
-}
-
-/* 3. 트리 구조 (초록색 원형 & 선 연결 필수 로직) */
-.tree-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 15px;
-}
-.tree-children {
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-}
-.bst-node {
-  background-color: #10b981; /* 산뜻한 초록색 */
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  position: relative;
-  z-index: 10; /* 선보다 위에 오도록 설정 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.tree-svg-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* 클릭 방해 금지 */
-  z-index: 1; /* 노드 아래에 선이 깔리도록 설정 */
 }

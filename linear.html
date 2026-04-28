@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>스택/큐/데크 시뮬레이터</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/linear.css" />
   </head>
-  <body>
+  <body class="page-linear">
     <div class="main-container">
       <div class="header-area">
         <a href="index.html" class="back-btn">← 뒤로가기</a>
@@ -16,8 +19,7 @@
         <div class="control-group">
           <select
             id="linearTypeSelect"
-            class="control-select"
-            style="width: 180px"
+            class="control-select type-select"
           >
             <option value="stack">스택 (Stack)</option>
             <option value="queue">큐 (Queue)</option>
@@ -26,8 +28,7 @@
           <button id="linearPeekBtn" class="btn btn-purple">Peek (확인)</button>
           <button
             id="linearSearchBtn"
-            class="btn"
-            style="background-color: #4f46e5"
+            class="btn accent-field"
           >
             검색
           </button>
@@ -39,35 +40,39 @@
           <input
             type="text"
             id="linearInput"
-            class="control-input"
+            class="control-input value-input"
             placeholder="값 입력"
-            style="flex-grow: 1"
           />
-          <button id="linearPushBtn" class="btn btn-orange">Push</button>
+
+          <button id="linearPushBtn" class="btn btn-orange">push</button>
+          <button
+            id="dequeAddFrontBtn"
+            class="btn btn-teal deck-button-hidden"
+          >
+            맨 앞 추가
+          </button>
         </div>
 
         <div class="control-group">
-          <button id="linearPopBtn" class="btn btn-red">Pop</button>
+          <button id="linearPopBtn" class="btn btn-red">pop</button>
+          <button
+            id="dequeRemoveBackBtn"
+            class="btn btn-orange deck-button-hidden"
+          >
+            맨 뒤 삭제
+          </button>
         </div>
 
         <div
           id="linear-visualizer"
-          class="visualizer-area"
-          style="
-            height: 350px;
-            background-color: #f8fafc; /* 다른 페이지와 동일한 배경색 */
-            border: 1px solid #e2e8f0; /* 다른 페이지와 동일한 테두리 */
-            flex-direction: row;
-            padding: 20px;
-            gap: 10px;
-          "
+          class="visualizer-area linear-visualizer"
         ></div>
 
         <div class="info-panel">
           • 요소 개수:
-          <span id="linearSizeLabel" style="font-weight: bold">0</span><br />
+          <span id="linearSizeLabel" class="stat-value">0</span><br />
           • Top/Front:
-          <span id="linearTopLabel" style="font-weight: bold">Empty</span>
+          <span id="linearTopLabel" class="stat-value">Empty</span>
         </div>
       </div>
     </div>

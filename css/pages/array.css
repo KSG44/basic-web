@@ -1,0 +1,8 @@
+.page-array .array-visualizer {
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.page-array .accent-field {
+  background-color: #4f46e5;
+}

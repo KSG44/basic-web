@@ -1,0 +1,25 @@
+.page-linear .type-select {
+  width: 180px;
+}
+
+.page-linear .accent-field {
+  background-color: #4f46e5;
+}
+
+.page-linear .value-input {
+  flex-grow: 1;
+}
+
+.page-linear .deck-button-hidden {
+  display: none;
+}
+
+.page-linear .linear-visualizer {
+  height: 350px;
+  padding: 20px;
+  gap: 10px;
+}
+
+.page-linear .stat-value {
+  font-weight: bold;
+}

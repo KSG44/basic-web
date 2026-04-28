@@ -19,21 +19,25 @@ export class LinkedList {
     while (curr.next) curr = curr.next;
     curr.next = newNode;
   }
-  insertAt(data, index) {
+  insertAt(index, data) {
     const newNode = new Node(data);
-    if (index === 0) {
+    
+    if (index <= 0 || !this.head) {
       newNode.next = this.head;
       this.head = newNode;
       return;
     }
+
     let curr = this.head,
       prev = null,
       i = 0;
+
     while (i < index && curr) {
       prev = curr;
       curr = curr.next;
       i++;
     }
+
     newNode.next = curr;
     if (prev) prev.next = newNode;
   }

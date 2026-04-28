@@ -2,33 +2,26 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>트리 구조 시뮬레이터</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>이진 탐색 트리 시뮬레이터</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/tree.css" />
   </head>
-  <body>
+  <body class="page-tree">
     <div class="main-container">
       <div class="header-area">
         <a href="index.html" class="back-btn">← 뒤로가기</a>
-        <h1 class="simulator-title">트리 구조 시뮬레이터</h1>
+        <h1 class="simulator-title">이진 탐색 트리 시뮬레이터</h1>
       </div>
 
       <div class="simulator-box">
         <div class="control-group">
-          <select
-            id="treeTypeSelect"
-            class="control-select"
-            style="width: 200px; cursor: pointer"
-          >
-            <option value="bst">이진 탐색 트리 (BST)</option>
-            <option value="avl">AVL 트리 (자가 균형)</option>
-            <option value="heap">최대 힙 (Max Heap)</option>
-          </select>
           <input
             type="number"
             id="treeInput"
-            class="control-input"
+            class="control-input value-input"
             placeholder="값 입력"
-            style="flex-grow: 1"
           />
           <button id="treeInsertBtn" class="btn btn-green">
             노드 추가 O(log n)
@@ -52,39 +45,19 @@
 
         <div
           id="tree-result"
-          style="
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: #1e3a8a;
-            min-height: 24px;
-          "
-        ></div>
-
-        <div
-          id="heap-array-visualizer"
-          class="visualizer-area array-style"
-          style="
-            min-height: 80px;
-            margin-bottom: 15px;
-            display: none;
-            padding: 20px;
-          "
+          class="tree-result"
         ></div>
 
         <div
           id="tree-visualizer"
-          class="visualizer-area"
-          style="height: 400px; align-items: flex-start; padding-top: 30px"
+          class="visualizer-area tree-visualizer"
         ></div>
 
         <div class="info-panel">
-          • 트리 높이: <span id="treeHeight" style="font-weight: bold">0</span
-          ><br />
           • 현재 모드:
-          <span id="treeTypeLabel" style="font-weight: bold"
-            >이진 탐색 트리 (BST)</span
+          <span id="treeTypeLabel" class="stat-value">이진 탐색 트리 (BST)</span
           ><br />
-          <span style="color: #94a3b8; font-size: 0.85rem"
+          <span class="hint-text"
             >* 시간 복잡도: 검색/삽입/삭제 O(log n) (균형 트리 기준)</span
           >
         </div>

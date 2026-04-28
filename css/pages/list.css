@@ -1,0 +1,21 @@
+.page-list .type-select {
+  width: 200px;
+  cursor: pointer;
+}
+
+.page-list .value-input {
+  flex-grow: 1;
+}
+
+.page-list .index-input {
+  width: 100px;
+}
+
+.page-list .list-visualizer {
+  padding: 40px;
+  min-height: 250px;
+}
+
+.page-list .stat-value {
+  font-weight: bold;
+}

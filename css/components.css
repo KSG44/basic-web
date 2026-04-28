@@ -1,0 +1,80 @@
+.linear-node {
+  width: 150px;
+  height: 50px;
+  background-color: #ea580c;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+.top-indicator {
+  font-size: 0.8rem;
+  color: #ea580c;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.list-node {
+  background-color: #9333ea;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.list-arrow {
+  color: #9333ea;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+.tree-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.tree-children {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.bst-node {
+  background-color: #10b981;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tree-svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}

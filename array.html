@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>동적 배열 시뮬레이터</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/array.css" />
   </head>
-  <body>
+  <body class="page-array">
     <div class="main-container">
       <div class="header-area">
         <a href="index.html" class="back-btn">← 뒤로가기</a>
@@ -17,16 +20,14 @@
           <input
             type="text"
             id="arrInput"
-            class="control-input"
+            class="control-input value-input"
             placeholder="값 입력"
-            style="flex-grow: 1"
           />
           <input
             type="number"
             id="arrIndex"
-            class="control-input"
+            class="control-input index-input"
             placeholder="인덱스 입력 (접근/삽입용)"
-            style="width: 180px"
           />
           <button id="arrAddLastBtn" class="btn btn-blue">맨뒤 추가</button>
           <button id="arrInsertBtn" class="btn btn-green">중간 삽입</button>
@@ -39,8 +40,7 @@
           </button>
           <button
             id="arrSearchBtn"
-            class="btn"
-            style="background-color: #4f46e5"
+            class="btn accent-field"
           >
             값 검색 O(n)
           </button>
@@ -51,8 +51,7 @@
 
         <div
           id="array-visualizer"
-          class="visualizer-area array-style"
-          style="justify-content: flex-start; padding: 20px"
+          class="visualizer-area array-visualizer"
         ></div>
 
         <div class="info-panel">

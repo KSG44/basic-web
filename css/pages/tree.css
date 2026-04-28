@@ -1,0 +1,25 @@
+.page-tree .value-input {
+  flex-grow: 1;
+}
+
+.page-tree .tree-result {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1e3a8a;
+  min-height: 24px;
+}
+
+.page-tree .tree-visualizer {
+  height: 400px;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.page-tree .stat-value {
+  font-weight: bold;
+}
+
+.page-tree .hint-text {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
